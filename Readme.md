@@ -52,3 +52,5 @@ randomuser
 
    ```bash
    go get -u github.com/gorilla/mux
+
+по http://localhost:8080/randomuser, вы должны увидеть результаты запроса к API RandomUser,
