@@ -1,11 +1,17 @@
 package handlers
 
 import (
+	"github.com/gorilla/mux"
 	"html/template"
 	"log"
 	"net/http"
 	"randomuser/user"
 )
+
+func SetupRoutes(router *mux.Router) {
+	router.HandleFunc("/randomuser", RandomUserHandler).Methods("GET")
+	// другие роуты по мере необходимости
+}
 
 func RandomUserHandler(w http.ResponseWriter, r *http.Request) {
 	repo := user.NewRandomUserRepository("https://randomuser.me/api/")

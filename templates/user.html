@@ -1,38 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Details</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #333;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
+
 <body>
 <h1>User Details</h1>
-<p>Name: {{.FirstName}} {{.LastName}}</p>
-<p>Email: {{.Email}}</p>
-<p>Gender: {{if .Gender}}{{.Gender}}{{else}}N/A{{end}}</p>
-<p>Location: {{.Location.City}}, {{.Location.State}}, {{.Location.Country}}</p>
-<p>Street: {{.Location.Street.Number}} {{.Location.Street.Name}}</p>
-<p>Postcode: {{.Location.Postcode}}</p>
-<p>Coordinates: {{.Location.Coordinates.Latitude}}, {{.Location.Coordinates.Longitude}}</p>
-<p>Timezone: {{.Location.Timezone.Description}} ({{.Location.Timezone.Offset}})</p>
-<p>Login UUID: {{.Login.UUID}}</p>
-<p>Username: {{.Login.Username}}</p>
-<p>Password: {{.Login.Password}}</p>
-<p>Salt: {{.Login.Salt}}</p>
-<p>MD5: {{.Login.MD5}}</p>
-<p>SHA1: {{.Login.SHA1}}</p>
-<p>SHA256: {{.Login.SHA256}}</p>
-<p>Date of Birth: {{.DOB.Date}} (Age: {{.DOB.Age}})</p>
-<p>Registered: {{.Registered.Date}} (Age: {{.Registered.Age}})</p>
-<p>Phone: {{.Phone}}</p>
-<p>Cell: {{.Cell}}</p>
-<p>ID Name: {{.ID.Name}}</p>
-<p>ID Value: {{.ID.Value}}</p>
-<p>Nationality: {{.Nat}}</p>
+<table>
+    <tr>
+        <th>Name</th>
+        <td>{{.FirstName}} {{.LastName}}</td>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <td>{{.Email}}</td>
+    </tr>
+    <tr>
+        <th>Gender</th>
+        <td>{{if .Gender}}{{.Gender}}{{else}}N/A{{end}}</td>
+    </tr>
+    <tr>
+        <th>Location</th>
+        <td>{{.Location.City}}, {{.Location.State}}, {{.Location.Country}}</td>
+    </tr>
+    <tr>
+        <th>Street</th>
+        <td>{{.Location.Street.Number}} {{.Location.Street.Name}}</td>
+    </tr>
+    <tr>
+        <th>Postcode</th>
+        <td>{{.Location.Postcode}}</td>
+    </tr>
+    <tr>
+        <th>Coordinates</th>
+        <td>{{.Location.Coordinates.Latitude}}, {{.Location.Coordinates.Longitude}}</td>
+    </tr>
+    <tr>
+        <th>Timezone</th>
+        <td>{{.Location.Timezone.Description}} ({{.Location.Timezone.Offset}})</td>
+    </tr>
+    <tr>
+        <th>Login UUID</th>
+        <td>{{.Login.UUID}}</td>
+    </tr>
+    <tr>
+        <th>Username</th>
+        <td>{{.Login.Username}}</td>
+    </tr>
+    <tr>
+        <th>Password</th>
+        <td>{{.Login.Password}}</td>
+    </tr>
+    <tr>
+        <th>Salt</th>
+        <td>{{.Login.Salt}}</td>
+    </tr>
+    <tr>
+        <th>MD5</th>
+        <td>{{.Login.MD5}}</td>
+    </tr>
+    <tr>
+        <th>SHA1</th>
+        <td>{{.Login.SHA1}}</td>
+    </tr>
+    <tr>
+        <th>SHA256</th>
+        <td>{{.Login.SHA256}}</td>
+    </tr>
+    <tr>
+        <th>Date of Birth</th>
+        <td>{{.DOB.Date}} (Age: {{.DOB.Age}})</td>
+    </tr>
+    <tr>
+        <th>Registered</th>
+        <td>{{.Registered.Date}} (Age: {{.Registered.Age}})</td>
+    </tr>
+    <tr>
+        <th>Phone</th>
+        <td>{{.Phone}}</td>
+    </tr>
+    <tr>
+        <th>Cell</th>
+        <td>{{.Cell}}</td>
+    </tr>
+    <tr>
+        <th>ID Name</th>
+        <td>{{.ID.Name}}</td>
+    </tr>
+    <tr>
+        <th>ID Value</th>
+        <td>{{.ID.Value}}</td>
+    </tr>
+    <tr>
+        <th>Nationality</th>
+        <td>{{.Nat}}</td>
+    </tr>
+</table>
 <p>Large Picture: <img src="{{.Picture.Large}}" alt="Large Picture"></p>
 <p>Medium Picture: <img src="{{.Picture.Medium}}" alt="Medium Picture"></p>
 <p>Thumbnail Picture: <img src="{{.Picture.Thumbnail}}" alt="Thumbnail Picture"></p>
-<!-- Добавьте другие поля по мере необходимости -->
 </body>
+
 </html>
