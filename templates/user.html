@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+</head>
+<body>
+<h1>User Details</h1>
+<p>Name: {{.FirstName}} {{.LastName}}</p>
+<p>Email: {{.Email}}</p>
+<p>Gender: {{if .Gender}}{{.Gender}}{{else}}N/A{{end}}</p>
+<p>Location: {{.Location.City}}, {{.Location.State}}, {{.Location.Country}}</p>
+<p>Street: {{.Location.Street.Number}} {{.Location.Street.Name}}</p>
+<p>Postcode: {{.Location.Postcode}}</p>
+<p>Coordinates: {{.Location.Coordinates.Latitude}}, {{.Location.Coordinates.Longitude}}</p>
+<p>Timezone: {{.Location.Timezone.Description}} ({{.Location.Timezone.Offset}})</p>
+<p>Login UUID: {{.Login.UUID}}</p>
+<p>Username: {{.Login.Username}}</p>
+<p>Password: {{.Login.Password}}</p>
+<p>Salt: {{.Login.Salt}}</p>
+<p>MD5: {{.Login.MD5}}</p>
+<p>SHA1: {{.Login.SHA1}}</p>
+<p>SHA256: {{.Login.SHA256}}</p>
+<p>Date of Birth: {{.DOB.Date}} (Age: {{.DOB.Age}})</p>
+<p>Registered: {{.Registered.Date}} (Age: {{.Registered.Age}})</p>
+<p>Phone: {{.Phone}}</p>
+<p>Cell: {{.Cell}}</p>
+<p>ID Name: {{.ID.Name}}</p>
+<p>ID Value: {{.ID.Value}}</p>
+<p>Nationality: {{.Nat}}</p>
+<p>Large Picture: <img src="{{.Picture.Large}}" alt="Large Picture"></p>
+<p>Medium Picture: <img src="{{.Picture.Medium}}" alt="Medium Picture"></p>
+<p>Thumbnail Picture: <img src="{{.Picture.Thumbnail}}" alt="Thumbnail Picture"></p>
+<!-- Добавьте другие поля по мере необходимости -->
+</body>
+</html>
